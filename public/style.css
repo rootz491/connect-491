@@ -1,0 +1,328 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-collapse: collapse;
+    font-family: 'poppins', sans-serif;
+
+    /* outline: 1px solid red; */
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+        /* layout */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+section {
+    border: 3px solid black;
+    min-height: 50vh;
+}
+
+#post {
+    grid-column: 1 / 3;
+}
+
+#post img {
+    width: 35px;
+}
+
+        /* section */
+
+section h1 {
+    font-size: 2.5em;
+    padding: .5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+input {
+    padding: 0 .5em;
+    font-size: 1.5rem;
+    border: 3px solid black;
+}
+
+textarea {
+    padding: 0 .2em;
+    border: 3px solid black;
+    padding: 1em 4px;
+    width: 80%;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+a {
+    color: black;
+}
+
+        /* auth */
+
+#signedOut {
+    height: 100%;
+    /* font-family: 'Chilanka', cursive; */
+}
+
+#signedOut form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 3rem 20%;
+}
+
+.authButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.authButtons a {
+    padding: 6px 12px;
+    border: 2px solid black;
+}
+
+        /* details */
+
+#details form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0 20%;
+    margin-top: 2em;
+}
+
+.otherDetails {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.otherDetails input {
+    width: 100px;
+}
+
+.detailSubmitWrapper {
+    display: flex;
+}
+
+.detailSubmitWrapper a {
+    padding: 4px 12px;
+    border: 2px solid black;
+    margin: 1.5em auto;
+}
+
+        /* profile */
+
+.profileWrapper {
+    width: 80%;
+    margin: auto;
+}
+
+.profileWrapper > div, .displayAge, .displayGender {
+    display: flex;
+    justify-content: space-between;
+    gap: .5em;
+    font-size: 1.5rem;
+}
+
+.profileWrapper span {
+    color: #aaaaaa;
+}
+
+.profileWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.profileWrapper > h2 {
+    text-align: center;
+}
+
+
+
+
+        /* about the dev */
+
+#aboutDev {
+    position: relative;
+}
+
+.aboutWrapper {
+    padding: 2rem;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    text-align: center; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.aboutWrapper > p > a {
+    background: black;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: whitesmoke;
+} 
+
+.socialMedia {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+
+        /* user */
+
+#otherPeople {
+    height: 50vh;
+    overflow: scroll;
+}
+
+#otherPeople > h1 {
+    position: sticky;
+    top: 0;
+    background: rgb(254, 254, 254);
+}
+
+.userWrapper {
+    margin: 2em 0;
+    min-height: 20vh;
+}
+
+#user {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 2em auto;
+    gap: 3.5em;
+    padding: 7px 14px;
+    border: 3px solid black;
+}
+
+        /* post */
+#post {
+    overflow: scroll;
+    height: 50vh;
+}
+
+#post > h1 {
+    position: sticky;
+    top: 0;
+    background: rgb(254, 254, 254);
+}
+
+#postWrapper {
+    padding: 1em 2em;
+    min-height: 80vh;
+}
+
+#userPost {
+    border: 3px solid black;
+    padding: .7em 1.2em;
+    margin-bottom: 1em;
+}
+
+#postImg {
+    float: left;
+    margin-right: 1em;
+}
+
+#postWriter {
+    text-align: right;
+}
+
+        /* write post */
+
+#writePost textarea {
+    margin: auto;
+}
+
+.contentWrapper {
+    display: flex;
+}
+
+.postOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 10%;
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
+.public {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.postOptions a {
+    padding: 4px 14px;
+    border: 2px solid black;
+}
+
+
+        /* container ui ends here */
+
+
+
+
+
+
+
+        /* responsive */
+
+@media screen and (max-width: 1215px) {
+    #writePost {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    #post {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 815px) {
+    #post {
+        grid-column: 1;
+    }
+    #writePost {
+        grid-row: 4;
+        grid-column: 1;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        display: block;
+    }
+    .aboutWrapper {
+        padding: 0 1em;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .socialMedia {
+        position: static;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+}
+
+
+
+
+
+
