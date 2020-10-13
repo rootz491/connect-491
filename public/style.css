@@ -63,6 +63,14 @@ a {
     color: black;
 }
 
+button {
+    background: white;
+    color: black;
+    padding: 6px 12px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
         /* auth */
 
 #signedOut {
@@ -80,11 +88,6 @@ a {
 .authButtons {
     display: flex;
     justify-content: space-between;
-}
-
-.authButtons a {
-    padding: 6px 12px;
-    border: 2px solid black;
 }
 
         /* details */
@@ -111,7 +114,7 @@ a {
     display: flex;
 }
 
-.detailSubmitWrapper a {
+.detailSubmitWrapper button {
     padding: 4px 12px;
     border: 2px solid black;
     margin: 1.5em auto;
@@ -145,6 +148,13 @@ a {
     text-align: center;
 }
 
+.logoutBtn {
+    display: flex;
+}
+
+#logoutBtn {
+    margin: auto;
+}
 
 
 
@@ -266,7 +276,7 @@ a {
     align-items: center;
 }
 
-.postOptions a {
+.postOptions button {
     padding: 4px 14px;
     border: 2px solid black;
 }
@@ -310,6 +320,11 @@ a {
         padding: 0 1em;
         text-align: center;
     }
+    #signedOut form {
+        gap: 2.5em;
+        margin: 0 10%;
+        margin-top: 1rem;
+    }
 }
 
 @media screen and (max-width: 380px) {
@@ -318,6 +333,11 @@ a {
         display: flex;
         justify-content: space-between;
         margin-top: 2rem;
+    }
+    #signedOut form {
+        gap: 2.5em;
+        margin: 0 10%;
+        margin-top: .5rem;
     }
 }
 

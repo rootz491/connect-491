@@ -1,7 +1,28 @@
 {
-  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
   "rules": {
-    ".read": false,
-    ".write": false
+    "user": {
+      ".read": "auth != null",
+      ".write": "auth.uid !== null",
+
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        "age": {".validate": "newData.isNumber() && newData.val() >= 14 && newData.val() <= 60"},
+        "fullName": {".validate": "newData.isString()"},
+        "userName": {".validate": "newData.isString() && newData.val().matches(/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/)"},
+        "gender": {".validate": "newData.val() === 'male' || newData.val() === 'female'"},
+        "$other": { ".validate": false }
+      }
+    },
+    "posts": {
+      ".read": "auth.uid !== null && ( auth.uid === data.child('userId').val() || data.child('isPublic').val() === true )",
+      ".write": "auth.uid !== null && ( root.child('user').child(auth.uid).exists() )",
+
+      "$postId": {
+        "userId": { ".validate": "auth.uid == newData.val()" },
+        "content": { ".validate": "newData.isString()" },
+        "isPublic": { ".validate": "newData.isBoolean()" },
+        "$other": { ".validate": false }
+      }
+    }
   }
 }

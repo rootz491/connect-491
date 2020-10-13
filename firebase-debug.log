@@ -1,0 +1,74 @@
+[debug] [2020-10-13T15:15:44.057Z] ----------------------------------------------------------------------
+[debug] [2020-10-13T15:15:44.061Z] Command:       /usr/bin/node /usr/local/bin/firebase emulators:start --only database
+[debug] [2020-10-13T15:15:44.062Z] CLI Version:   8.12.1
+[debug] [2020-10-13T15:15:44.062Z] Platform:      linux
+[debug] [2020-10-13T15:15:44.062Z] Node Version:  v10.21.0
+[debug] [2020-10-13T15:15:44.062Z] Time:          Tue Oct 13 2020 20:45:44 GMT+0530 (India Standard Time)
+[debug] [2020-10-13T15:15:44.063Z] ----------------------------------------------------------------------
+[debug] [2020-10-13T15:15:44.063Z] 
+[debug] [2020-10-13T15:15:44.075Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-10-13T15:15:44.075Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: database {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: database"}}
+[debug] [2020-10-13T15:15:44.118Z] [hub] writing locator at /tmp/hub-connect-491.json
+[debug] [2020-10-13T15:15:44.161Z] database rules config:  [{"instance":"connect-491","rules":"/home/rootz491/connect/database.rules.json"}]
+[info] i  database: downloading firebase-database-emulator-v4.5.0.jar... {"metadata":{"emulator":{"name":"database"},"message":"downloading firebase-database-emulator-v4.5.0.jar..."}}
+[debug] [2020-10-13T15:17:07.144Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2020-10-13T15:17:07.145Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-10-13T15:17:07.145Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2020-10-13T15:17:07.145Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/home/rootz491/.cache/firebase/emulators/firebase-database-emulator-v4.5.0.jar","--host","localhost","--port",9000],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/home/rootz491/.cache/firebase/emulators/firebase-database-emulator-v4.5.0.jar\",\"--host\",\"localhost\",\"--port\",9000],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2020-10-13T15:17:10.496Z] 20:47:10.493 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"20:47:10.493 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2020-10-13T15:17:10.704Z] 20:47:10.704 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"20:47:10.704 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000\n"}}
+[info] i  ui: downloading ui-v1.1.1.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.1.1.zip..."}}
+[debug] [2020-10-13T15:17:17.478Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-10-13T15:17:17.478Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2020-10-13T15:17:17.478Z] Starting Emulator UI with command {"binary":"node","args":["/home/rootz491/.cache/firebase/emulators/ui-v1.1.1/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/rootz491/.cache/firebase/emulators/ui-v1.1.1/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2020-10-13T15:17:18.180Z] Web / API server started at http://localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4000\n"}}
+[debug] [2020-10-13T15:17:18.246Z] >>> HTTP REQUEST PUT http://localhost:9000/.settings/rules.json?ns=connect-491  
+ {
+  "rules": {
+    "user": {
+      ".read": "auth != null",
+      ".write": "auth.uid !== null",
+
+      "$userId": {
+        ".read": "$userId === auth.uid",
+        "age": {".validate": "newData.isNumber() && newData.val() >= 14 && newData.val() <= 60"},
+        "fullName": {".validate": "newData.isString()"},
+        "userName": {".validate": "newData.isString() && newData.val().matches(/^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/)"},
+        "gender": {".validate": "newData.val() === 'male' || newData.val() === 'female'"},
+        "$other": { ".validate": false }
+      }
+    },
+    "posts": {
+      ".read": "auth.uid !== null && ( auth.uid === data.child('userId').val() || data.child('isPublic').val() === true )",
+      ".write": "auth.uid !== null && ( root.child('user').child(auth.uid).exists() )",
+
+      "$postId": {
+        "userId": { ".validate": "auth.uid == newData.val()" },
+        "content": { ".validate": "newData.isString()" },
+        "isPublic": { ".validate": "newData.isBoolean()" },
+        "$other": { ".validate": false }
+      }
+    }
+  }
+}
+[debug] [2020-10-13T15:17:19.897Z] <<< HTTP RESPONSE 200 {"content-length":"15","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache","x-firebase-project-id":"connect-491","x-firebase-project-number":"123456789","x-firebase-uuid":"a0bae5e8-abd1-48cd-94ed-1b72524d14a7"}
+[info] 
+┌───────────────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! View status and logs at http://localhost:4000 │
+└───────────────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┬────────────────────────────────┐
+│ Emulator │ Host:Port      │ View in Emulator UI            │
+├──────────┼────────────────┼────────────────────────────────┤
+│ Database │ localhost:9000 │ http://localhost:4000/database │
+└──────────┴────────────────┴────────────────────────────────┘
+  Other reserved ports: 4400, 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
