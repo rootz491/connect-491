@@ -17,21 +17,21 @@
 
       <div id="signedOut">
         <h1>who am i</h1>
-        <form>
-          <input type="email" id="email" placeholder="email address">
-          <input type="password" id="pass" placeholder="password">
+        <form id="firstForm">
+          <input type="email" id="email" placeholder="email address" required>
+          <input type="password" id="pass" placeholder="password" required>
           <div class="authButtons">
-            <a id="loginBtn" href="">log in</a>
-            <a id="signupBtn" href="">sign up</a>
+            <button id="loginBtn">log in</button>
+            <button id="signupBtn">sign up</button>
           </div>
         </form>
       </div>
       
       <div id="details" hidden>
         <h1>Details</h1>
-        <form>
-          <input type="text" placeholder="user name" id="userName">
-          <input type="text" placeholder="full name" id="fullName">
+        <form id="detailsForm">
+          <input type="text" placeholder="user name" id="userName" required>
+          <input type="text" placeholder="full name" id="fullName" required>
           <div class="otherDetails">
             <input type="text" placeholder="age" id="age">
             <select id="gender">
@@ -40,7 +40,7 @@
             </select>
           </div>
           <div class="detailSubmitWrapper">
-            <a href="" type="submit">submit</a>
+            <button href="" type="submit">submit</button>
           </div>
         </form>
       </div>
@@ -50,23 +50,25 @@
         <div class="profileWrapper">
           <div class="displayUserName">
             <p>user name</p>
-            <span id="displayUserName">example123</span>
+            <span id="displayUserName"></span>
           </div>
           <div class="displayFullName">
             <p>full name</p>
-            <span id="displayFullName">Mr. example</span>
+            <span id="displayFullName"></span>
           </div>
           <div class="displayOtherData">
             <div class="displayAge">
               <p>age</p>
-              <span id="displayAge">69</span>
+              <span id="displayAge"></span>
             </div>
             <div class="displayGender">
               <p>gender</p>
-              <span id="displayGender">male</span>
+              <span id="displayGender"></span>
             </div>
           </div>
-          <h2>Home Sweet Home</h2>
+          <div class="logoutBtn">
+            <button id="logoutBtn" type="button">logout</button>
+          </div>
         </div>
       </div>
 
@@ -76,7 +78,7 @@
       <h1>About the Dev</h1>
       <div class="aboutWrapper">
         <p>
-          Hi, This website is a project created & maintained by <a target="_blank" href="https://www.linktr.ee/rootz491">@karansh491</a>. A student coding for fun, that’s it. thankyou for your time!
+          Hi, This website is a project created & maintained by <a target="_blank" href="https://www.linktr.ee/rootz491">@karansh491</a>. A student coding for fun. <br> Thankyou for your time!
         </p>
         <div class="socialMedia">
             <a target="_blank" href="https://www.twitter.com/karansh491"><img src="https://img.icons8.com/android/50/000000/twitter.png"/></a>
@@ -90,17 +92,12 @@
     <section id="otherPeople">
       <h1>Other Humans</h1>
       <div class="userWrapper">
-
+<!--   
         <div id="user">
           <p>lorem ipsum</p>
-          <a href=""><img src="https://img.icons8.com/metro/25/000000/gender-neutral-user.png"/></a>
+          <a id="userAlias" href=""><img src="https://img.icons8.com/metro/25/000000/gender-neutral-user.png"/></a>
         </div>
-      
-        <div id="user">
-          <p>lorem ipsum</p>
-          <a href=""><img src="https://img.icons8.com/metro/25/000000/gender-neutral-user.png"/></a>
-        </div>
-
+    
         <div id="user">
           <p>lorem ipsum</p>
           <a href=""><img src="https://img.icons8.com/metro/25/000000/gender-neutral-user.png"/></a>
@@ -111,6 +108,11 @@
           <a href=""><img src="https://img.icons8.com/metro/25/000000/gender-neutral-user.png"/></a>
         </div>
 
+        <div id="user">
+          <p>lorem ipsum</p>
+          <a href=""><img src="https://img.icons8.com/metro/25/000000/gender-neutral-user.png"/></a>
+        </div>
+-->
       </div>      
     </section>
 
@@ -118,7 +120,7 @@
       <h1>Live Feed</h1>
       <div id="postWrapper">
         
-        <div id="userPost">
+        <!-- <div id="userPost">
           <img id="postImg" src="./avatar/b3.png" alt="avatar">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Est odio harum aliquid necessitatibus officiis aperiam vitae, quasi fuga quis.
@@ -148,22 +150,23 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Est odio harum aliquid necessitatibus officiis aperiam vitae, quasi fuga quis.
           </p>
           <h3 id="postWriter">lorem96</h3>
-        </div>
+        </div> -->
+
       </div>
     </section>
 
     <section id="writePost">
       <h1>Post Something</h1>
-      <form>
+      <form id="postForm">
         <div class="contentWrapper">
-          <textarea id="textContent" cols="30" rows="8" placeholder="What's on your mind?"></textarea>
+          <textarea id="textContent" cols="30" rows="8" placeholder="What's on your mind?" required></textarea>
         </div>
         <div class="postOptions">
           <div class="public">
             <label for="isPublic">public</label>
             <input type="checkbox" id="isPublic">
           </div>
-          <a href="" type="submit">Post</a>
+          <button type="submit">Post</button>
         </div>
       </form>
     </section>
