@@ -1,6 +1,6 @@
-#FIREBASE 
+# FIREBASE 
 
-##security rules
+## security rules
     >   .read       describes if and when data is allowed to be read by users.
     >   .write      describes if and when data is allowed to be written.
     >   .validate   defines what a correctly formatted value will look like, whether it has child attributes, and the data type.
